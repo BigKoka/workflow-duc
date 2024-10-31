@@ -1,0 +1,4123 @@
+{
+  "last_node_id": 401,
+  "last_link_id": 430,
+  "nodes": [
+    {
+      "id": 59,
+      "type": "ControlNetApply",
+      "pos": {
+        "0": 1829.96948242188,
+        "1": 530.256896972656,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 317.400024414063,
+        "1": 98
+      },
+      "flags": {
+
+      },
+      "order": 58,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 81,
+          "slot_index": 0,
+          "label": "conditioning"
+        },
+        {
+          "name": "control_net",
+          "type": "CONTROL_NET",
+          "link": 82,
+          "slot_index": 1,
+          "label": "control_net"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 83,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [78],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "CONDITIONING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ControlNetApply"
+      },
+      "widgets_values": [0.6]
+    },
+    {
+      "id": 89,
+      "type": "Note",
+      "pos": {
+        "0": 993.830017089844,
+        "1": -72.5466003417969,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "反推提示词"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 90,
+      "type": "Note",
+      "pos": {
+        "0": 1829.78503417969,
+        "1": -420.957489013672,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 518.476257324219,
+        "1": 79.4904098510742
+      },
+      "flags": {
+
+      },
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "经过Tiled Diffusion和VAE处理的新图像\n简单理解：高清修复重绘\n首先将输入图像划分为多个小块，然后在每个小块上应用随机的颜色空间变换。接着，用VAE将每个小块生成新的小块。最后，将所有生成的小块拼接在一起，形成一个完整的新图像"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 72,
+      "type": "SaveImage",
+      "pos": {
+        "0": 2590.78491210938,
+        "1": 125.042518615723,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 369.138549804688,
+        "1": 404.241577148438
+      },
+      "flags": {
+
+      },
+      "order": 77,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 98,
+          "label": "images"
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 117,
+      "type": "Image Comparer (rgthree)",
+      "pos": {
+        "0": 1852.24633789063,
+        "1": -2491.88525390625,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 320.535522460938,
+        "1": 365.463562011719
+      },
+      "flags": {
+
+      },
+      "order": 62,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image_a",
+          "type": "IMAGE",
+          "link": 122,
+          "label": "image_a",
+          "dir": 3
+        },
+        {
+          "name": "image_b",
+          "type": "IMAGE",
+          "link": 123,
+          "label": "image_b",
+          "dir": 3
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "comparer_mode": "Slide"
+      },
+      "widgets_values": [
+        [
+          "/view?filename=rgthree.compare._temp_jonij_00001_.png&type=temp&subfolder=&rand=0.6607641660840697",
+          "/view?filename=rgthree.compare._temp_jonij_00002_.png&type=temp&subfolder=&rand=0.1360273897803448"
+        ]
+      ]
+    },
+    {
+      "id": 122,
+      "type": "SUPIR_decode",
+      "pos": {
+        "0": 2869.81518554688,
+        "1": -2727.70483398438,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 214.790023803711,
+        "1": 102
+      },
+      "flags": {
+
+      },
+      "order": 72,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "SUPIR_VAE",
+          "type": "SUPIRVAE",
+          "link": 176,
+          "label": "SUPIR_VAE"
+        },
+        {
+          "name": "latents",
+          "type": "LATENT",
+          "link": 133,
+          "label": "latents"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [135, 138],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "image"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SUPIR_decode"
+      },
+      "widgets_values": [true, 512]
+    },
+    {
+      "id": 159,
+      "type": "SUPIR_model_loader_v2",
+      "pos": {
+        "0": 1432.32263183594,
+        "1": -2971.71997070313,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 364.361511230469,
+        "1": 170
+      },
+      "flags": {
+
+      },
+      "order": 43,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 169,
+          "slot_index": 0,
+          "label": "model"
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 170,
+          "label": "clip"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 171,
+          "label": "vae"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SUPIR_model",
+          "type": "SUPIRMODEL",
+          "links": [173, 175],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "SUPIR_model"
+        },
+        {
+          "name": "SUPIR_VAE",
+          "type": "SUPIRVAE",
+          "links": [172, 176],
+          "slot_index": 1,
+          "shape": 3,
+          "label": "SUPIR_VAE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SUPIR_model_loader_v2"
+      },
+      "widgets_values": [
+        "SUPIR/SUPIR-v0Q.ckpt",
+        false, "auto",
+        false]
+    },
+    {
+      "id": 118,
+      "type": "LoadImage",
+      "pos": {
+        "0": 989.290222167969,
+        "1": -2504.6015625,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 249.979232788086,
+        "1": 366.906799316406
+      },
+      "flags": {
+
+      },
+      "order": 2,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [123, 137, 201],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "IMAGE"
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "MASK"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "噪点 (3).png",
+        "image"
+      ]
+    },
+    {
+      "id": 179,
+      "type": "PreviewImage",
+      "pos": {
+        "0": 1533.32263183594,
+        "1": -2437.71997070313,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 276.659057617188,
+        "1": 310.0556640625
+      },
+      "flags": {
+
+      },
+      "order": 45,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 202,
+          "label": "images"
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 180,
+      "type": "Note",
+      "pos": {
+        "0": 1272.32263183594,
+        "1": -2319.71997070313,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 226.902770996094,
+        "1": 78.8976058959961
+      },
+      "flags": {
+
+      },
+      "order": 3,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "拼贴尺寸\ntile_size：512\ntile_stride：256(一定是上面的一半)"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 129,
+      "type": "Note",
+      "pos": {
+        "0": 1849.32263183594,
+        "1": -2928.71997070313,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 236.361572265625,
+        "1": 134.571517944336
+      },
+      "flags": {
+
+      },
+      "order": 4,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "fp32：速度慢，高精度\nbf16:速度快，精度差\nfp8:低端显卡，精度差\n\n快速模式设置\nbf16:速度快，精度差\n\nsdxl mode：选择SDXL快速生图模型\nsteps：10（步数：越高越占空间）"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 83,
+      "type": "Note",
+      "pos": {
+        "0": 1559.77575683594,
+        "1": -424.074523925781,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "multiplier:1   强度 100%\nmultiplier:0.5   强度 50%"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 108,
+      "type": "Image Comparer (rgthree)",
+      "pos": {
+        "0": 1759.01220703125,
+        "1": -1283.23193359375,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 328.941497802734,
+        "1": 406.616485595703
+      },
+      "flags": {
+
+      },
+      "order": 47,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image_a",
+          "type": "IMAGE",
+          "link": 118,
+          "label": "image_a",
+          "dir": 3
+        },
+        {
+          "name": "image_b",
+          "type": "IMAGE",
+          "link": 291,
+          "label": "image_b",
+          "dir": 3
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "comparer_mode": "Slide"
+      },
+      "widgets_values": [
+        [
+          "/api/view?filename=rgthree.compare._temp_mynbi_00001_.png&type=temp&subfolder=&rand=0.29136317203438855",
+          "/api/view?filename=rgthree.compare._temp_mynbi_00002_.png&type=temp&subfolder=&rand=0.2153967417489333"
+        ]
+      ]
+    },
+    {
+      "id": 106,
+      "type": "PreviewImage",
+      "pos": {
+        "0": 1756.92761230469,
+        "1": -1681.14086914063,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 334.506958007813,
+        "1": 327.821746826172
+      },
+      "flags": {
+
+      },
+      "order": 46,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 115,
+          "label": "images"
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 101,
+      "type": "LoadImage",
+      "pos": {
+        "0": 941.63427734375,
+        "1": -1678.93823242188,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 292.914184570313,
+        "1": 374.408752441406
+      },
+      "flags": {
+
+      },
+      "order": 6,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [290, 291],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "IMAGE"
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "MASK"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ComfyUI_temp_sehfm_00040_.png",
+        "image"
+      ]
+    },
+    {
+      "id": 88,
+      "type": "Note",
+      "pos": {
+        "0": 2102.78491210938,
+        "1": -287.957489013672,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 249.374298095703,
+        "1": 155.706436157227
+      },
+      "flags": {
+
+      },
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "MultiDiffusion： \n多重扩散：速度慢、效果佳\n\n是一种将输入图像水平和垂直方向均分为多个小块，然后在每个小块上应用随机的颜色空间变换的数据增强技术。\n\nMixture of Diffusers： \n扩散器混合物：速度快、效果佳\n\n是一种混合多个随机颜色空间变换的数据增强技术。并将它们混合在一起以增强图像的多样性。"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 74,
+      "type": "SaveImage",
+      "pos": {
+        "0": 2185.78491210938,
+        "1": 128.042510986328,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 379.986053466797,
+        "1": 405.940216064453
+      },
+      "flags": {
+
+      },
+      "order": 74,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 101,
+          "label": "images"
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 92,
+      "type": "Note",
+      "pos": {
+        "0": 2150.58203125,
+        "1": 1095.13256835938,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 319.877807617188,
+        "1": 84.0020523071289
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 8,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "快速设置\nupscale by：1～4（放大倍数）\nsteps：10～20（步数）\ncfg_scale：4～8cfg_scale：4～7（提高提示词更准确导航）"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 70,
+      "type": "DeepTranslatorTextNode",
+      "pos": {
+        "0": 1183,
+        "1": -149,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": [307.818542480469, 270],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 50,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 93,
+          "widget": {
+            "name": "text"
+          },
+          "label": "text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [92],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "text"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DeepTranslatorTextNode"
+      },
+      "widgets_values": [
+        "auto",
+        "english",
+        "disable",
+        "",
+        "",
+        "GoogleTranslator",
+        "",
+        "proxy_hide",
+        "authorization_hide"
+      ]
+    },
+    {
+      "id": 66,
+      "type": "CheckpointLoaderSimple",
+      "pos": {
+        "0": 978,
+        "1": -424,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 409.587646484375,
+        "1": 98
+      },
+      "flags": {
+
+      },
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [87],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "MODEL"
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [90, 94],
+          "slot_index": 1,
+          "shape": 3,
+          "label": "CLIP"
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [],
+          "slot_index": 2,
+          "shape": 3,
+          "label": "VAE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "epicrealism_naturalSinRC1VAE.safetensors"
+      ]
+    },
+    {
+      "id": 60,
+      "type": "ControlNetLoader",
+      "pos": {
+        "0": 1831.78503417969,
+        "1": 412.042510986328,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {
+
+      },
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CONTROL_NET",
+          "type": "CONTROL_NET",
+          "links": [82],
+          "shape": 3,
+          "label": "CONTROL_NET"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ControlNetLoader"
+      },
+      "widgets_values": [
+        "fp16/control_v11f1e_sd15_tile_fp16.safetensors"
+      ]
+    },
+    {
+      "id": 54,
+      "type": "ImageUpscaleWithModel",
+      "pos": {
+        "0": 1542.97583007813,
+        "1": 587.925476074219,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 226.800003051758,
+        "1": 46
+      },
+      "flags": {
+
+      },
+      "order": 42,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "upscale_model",
+          "type": "UPSCALE_MODEL",
+          "link": 72,
+          "slot_index": 0,
+          "label": "upscale_model"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 73,
+          "slot_index": 1,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [428],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "IMAGE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageUpscaleWithModel"
+      }
+    },
+    {
+      "id": 71,
+      "type": "CLIPTextEncode",
+      "pos": {
+        "0": 1559.77575683594,
+        "1": -207.07453918457,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 210,
+        "1": 54
+      },
+      "flags": {
+
+      },
+      "order": 51,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 94,
+          "slot_index": 0,
+          "label": "clip"
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 95,
+          "widget": {
+            "name": "text"
+          },
+          "label": "text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [81],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "CONDITIONING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "blurry, watermark, low quality"
+      ]
+    },
+    {
+      "id": 67,
+      "type": "CLIPTextEncode",
+      "pos": {
+        "0": 1459.82482910156,
+        "1": 54.925464630127,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 309.950927734375,
+        "1": 85.0139312744141
+      },
+      "flags": {
+
+      },
+      "order": 37,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 90,
+          "slot_index": 0,
+          "label": "clip"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [79],
+          "shape": 3,
+          "label": "CONDITIONING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "blurry, watermark, low quality，"
+      ]
+    },
+    {
+      "id": 61,
+      "type": "VAEDecodeTiled_TiledDiffusion",
+      "pos": {
+        "0": 2198.96948242188,
+        "1": -49.7430877685547,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 210,
+        "1": 102
+      },
+      "flags": {
+
+      },
+      "order": 70,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 84,
+          "label": "samples"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 326,
+          "slot_index": 1,
+          "label": "vae"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [97, 101],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "IMAGE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecodeTiled_TiledDiffusion"
+      },
+      "widgets_values": [1024, true]
+    },
+    {
+      "id": 329,
+      "type": "Note",
+      "pos": {
+        "0": 969,
+        "1": -270,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "单独用个VAE，速度快、占空间小"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 330,
+      "type": "Note",
+      "pos": {
+        "0": 2760.76416015625,
+        "1": 1098.29650878906,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 460.787841796875,
+        "1": 343.114898681641
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 12,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "颜色匹配\nimage_ref：输入图像\nimage_target：输出图像\n\nmkl：\n作用：最大特征值(Kernel联合)，用于调整图像颜色分布。\n效果：能够非常有效地匹配颜色，适用于复杂的颜色变换。\nhm：\n作用：颜色直方图匹配。\n效果：通过匹配颜色直方图来调整图像颜色，使其与目标图像的颜色分布相似。\nreinhard：\n作用：Reinhard颜色传输。\n效果：使用简单的转换方法传输颜色，能有效地调整亮度和对比度。\nmvgd：\n作用：多变量高斯分布匹配。\n效果：调整图像的颜色均值和协方差矩阵，适用于需要精确颜色匹配的场景。\nhm-mvgd-hm：\n作用：组合方法，先进行直方图匹配，再进行多变量高斯分布匹配，最后再次进行直方图匹配。\n效果：提供更精细的颜色调整效果，适用于对颜色变化有较高要求的情况。\nhm-mkl-hm：\n作用：组合方法，先进行直方图匹配，然后进行最大特征值调整，再进行一次直方图匹配。\n效果：颜色匹配效果更为精准，适用于复杂图像的颜色调整。\n\n"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 279,
+      "type": "Note",
+      "pos": {
+        "0": 1008,
+        "1": 211,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 272.326477050781,
+        "1": 240.887954711914
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 13,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "4x-UltraSharp.pth：\n速度：适中。\n效果：相对较为精细，适用于高清晰度图像处理。\n4XNMKDSuperscale_4xNMKDSuperscale.pt：\n速度：较慢。\n效果：效果优秀，适用于超级分辨率放大。\n4x foolhardy_Remacri.pth：\n速度：较快。\n效果：效果平衡，适用于一般分辨率放大场景。\nGFPGAN1.4.pth：\n速度：快。\n效果：效果较好，特别适用于人脸图像修复和增强。\ncodeformer-v0.1.0.pth：\n速度：较慢。\n效果：效果最优，主要用于高质量人脸修复。"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 332,
+      "type": "Note",
+      "pos": {
+        "0": 1322.32263183594,
+        "1": -2724.71997070313,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 272.326477050781,
+        "1": 240.887954711914
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 14,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "4x-UltraSharp.pth：\n速度：适中。\n效果：相对较为精细，适用于高清晰度图像处理。\n4XNMKDSuperscale_4xNMKDSuperscale.pt：\n速度：较慢。\n效果：效果优秀，适用于超级分辨率放大。\n4x foolhardy_Remacri.pth：\n速度：较快。\n效果：效果平衡，适用于一般分辨率放大场景。\nGFPGAN1.4.pth：\n速度：快。\n效果：效果较好，特别适用于人脸图像修复和增强。\ncodeformer-v0.1.0.pth：\n速度：较慢。\n效果：效果最优，主要用于高质量人脸修复。"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 58,
+      "type": "KSampler",
+      "pos": {
+        "0": 1829.96948242188,
+        "1": -58.3634376525879,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 315,
+        "1": 262
+      },
+      "flags": {
+
+      },
+      "order": 65,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 77,
+          "slot_index": 0,
+          "label": "model"
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 78,
+          "label": "positive"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 79,
+          "slot_index": 2,
+          "label": "negative"
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 80,
+          "label": "latent_image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [84],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "LATENT"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [1110381658328641, "randomize",
+        20, 1, "euler",
+        "normal",
+        0.7]
+    },
+    {
+      "id": 87,
+      "type": "Note",
+      "pos": {
+        "0": 2467,
+        "1": -451,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 460.787841796875,
+        "1": 343.114898681641
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 15,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "Color Match 颜色匹配\nimage_ref：输入图像\nimage_target：输出图像\n\nmkl：\n作用：最大特征值(Kernel联合)，用于调整图像颜色分布。\n效果：能够非常有效地匹配颜色，适用于复杂的颜色变换。\nhm：\n作用：颜色直方图匹配。\n效果：通过匹配颜色直方图来调整图像颜色，使其与目标图像的颜色分布相似。\nreinhard：\n作用：Reinhard颜色传输。\n效果：使用简单的转换方法传输颜色，能有效地调整亮度和对比度。\nmvgd：\n作用：多变量高斯分布匹配。\n效果：调整图像的颜色均值和协方差矩阵，适用于需要精确颜色匹配的场景。\nhm-mvgd-hm：\n作用：组合方法，先进行直方图匹配，再进行多变量高斯分布匹配，最后再次进行直方图匹配。\n效果：提供更精细的颜色调整效果，适用于对颜色变化有较高要求的情况。\nhm-mkl-hm：\n作用：组合方法，先进行直方图匹配，然后进行最大特征值调整，再进行一次直方图匹配。\n效果：颜色匹配效果更为精准，适用于复杂图像的颜色调整。\n\n"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 65,
+      "type": "LoadImage",
+      "pos": {
+        "0": 1121,
+        "1": 320,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 264.766632080078,
+        "1": 314
+      },
+      "flags": {
+
+      },
+      "order": 16,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [73, 83, 89, 91, 99],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "IMAGE"
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "MASK"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ComfyUI_temp_sehfm_00040_.png",
+        "image"
+      ]
+    },
+    {
+      "id": 125,
+      "type": "UpscaleModelLoader",
+      "pos": {
+        "0": 985.322631835938,
+        "1": -2728.71997070313,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 310.291625976563,
+        "1": 58
+      },
+      "flags": {
+
+      },
+      "order": 17,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "UPSCALE_MODEL",
+          "type": "UPSCALE_MODEL",
+          "links": [136],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "UPSCALE_MODEL"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UpscaleModelLoader"
+      },
+      "widgets_values": [
+        "4x-UltraSharp.pth"
+      ]
+    },
+    {
+      "id": 338,
+      "type": "SaveImage",
+      "pos": {
+        "0": 2764.76416015625,
+        "1": 1148.29650878906,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 210,
+        "1": 294.66943359375
+      },
+      "flags": {
+
+      },
+      "order": 71,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 364,
+          "label": "images"
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 64,
+      "type": "Image Comparer (rgthree)",
+      "pos": {
+        "0": 2996,
+        "1": 60,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 414.470825195313,
+        "1": 463.926086425781
+      },
+      "flags": {
+
+      },
+      "order": 78,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image_a",
+          "type": "IMAGE",
+          "link": 100,
+          "dir": 3,
+          "label": "image_a"
+        },
+        {
+          "name": "image_b",
+          "type": "IMAGE",
+          "link": 89,
+          "dir": 3,
+          "label": "image_b"
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "comparer_mode": "Slide"
+      },
+      "widgets_values": [
+        [
+          "/view?filename=rgthree.compare._temp_jyfvg_00001_.png&type=temp&subfolder=&rand=0.008778087886533115",
+          "/view?filename=rgthree.compare._temp_jyfvg_00002_.png&type=temp&subfolder=&rand=0.24651541911868602"
+        ]
+      ]
+    },
+    {
+      "id": 339,
+      "type": "Image Comparer (rgthree)",
+      "pos": {
+        "0": 2522.76391601563,
+        "1": 1541.296875,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 281.925018310547,
+        "1": 361.801849365234
+      },
+      "flags": {
+
+      },
+      "order": 68,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image_a",
+          "type": "IMAGE",
+          "link": 365,
+          "dir": 3,
+          "label": "image_a"
+        },
+        {
+          "name": "image_b",
+          "type": "IMAGE",
+          "link": 424,
+          "dir": 3,
+          "label": "image_b"
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "comparer_mode": "Slide"
+      },
+      "widgets_values": [
+        [
+          "/view?filename=rgthree.compare._temp_ucspt_00003_.png&type=temp&subfolder=&rand=0.7940766140660822",
+          "/view?filename=rgthree.compare._temp_ucspt_00004_.png&type=temp&subfolder=&rand=0.024745388084912445"
+        ]
+      ]
+    },
+    {
+      "id": 84,
+      "type": "Note",
+      "pos": {
+        "0": 959.901550292969,
+        "1": 1251.63012695313,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 287.835327148438,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 18,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "快速版，就用快速生图模型\n生图模型要与Controlnet（SD1.5/SDXL）版本相同"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 17,
+      "type": "CLIPTextEncode",
+      "pos": {
+        "0": 1375.71948242188,
+        "1": 1094.46618652344,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 349.698455810547,
+        "1": 144.916641235352
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 40,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 22,
+          "label": "clip"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [367],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "CONDITIONING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "1girl,Wearing glasses, Asian girl, long black hair, white round neck T-shirt,high quality, detailed"
+      ]
+    },
+    {
+      "id": 334,
+      "type": "Note",
+      "pos": {
+        "0": 1178.90161132813,
+        "1": 1478.63012695313,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 248.379623413086,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 19,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "要与生图模型（SD1.5/SDXL）版本相同"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 18,
+      "type": "CLIPTextEncode",
+      "pos": {
+        "0": 1377.24572753906,
+        "1": 1292.46618652344,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 348.172180175781,
+        "1": 103.196067810059
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 41,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 23,
+          "label": "clip"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [371],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "CONDITIONING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "blurry, watermark, low quality，"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "ColorMatch",
+      "pos": {
+        "0": 2524.76416015625,
+        "1": 1095.29650878906,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 210,
+        "1": 102
+      },
+      "flags": {
+
+      },
+      "order": 66,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image_ref",
+          "type": "IMAGE",
+          "link": 423,
+          "label": "image_ref"
+        },
+        {
+          "name": "image_target",
+          "type": "IMAGE",
+          "link": 26,
+          "label": "image_target"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [364],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "image"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ColorMatch"
+      },
+      "widgets_values": [
+        "mkl",
+        1]
+    },
+    {
+      "id": 75,
+      "type": "Note",
+      "pos": {
+        "0": 1774.90161132813,
+        "1": 1100.63012695313,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 334.430786132813,
+        "1": 291.909973144531
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 20,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "4x-UltraSharp\n专注于将低分辨率图像放大4倍并增强清晰度\n适合用于对细节要求较高的图像进行放大处理\n    \n4xNMKDSuperscale_4xNMKDSuperscale\n该模型在保留纹理细节方面表现优秀,能生成相对更加清晰锐利的结果\n\n4x_foolhardy_Remacri\n能够以4倍的比例放大图像分辨率,从低分辨率图像生成高分辨率图像,画质清晰细腻,保留了大量原始图像信息和细节\n\nGFPGANv1.4\n专注于去除人脸图像中的噪声、JPEG压缩伪影等瑕疵\n它能有效去除多种面部细节的破坏,如斑点、污渍等,修复效果显著\n这个权重主要用于增强人物人脸图像的清晰度和质量\n    \nCodeformer-v0.1.0\n用于修复图像中的低质量区域\n能够更好地修复大面积的失真和噪声\n对非人脸图像区域的修复效果更好"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 127,
+      "type": "Image Comparer (rgthree)",
+      "pos": {
+        "0": 3112.32250976563,
+        "1": -2738.71948242188,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 431.537078857422,
+        "1": 594.773132324219
+      },
+      "flags": {
+
+      },
+      "order": 76,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image_a",
+          "type": "IMAGE",
+          "link": 138,
+          "label": "image_a",
+          "dir": 3
+        },
+        {
+          "name": "image_b",
+          "type": "IMAGE",
+          "link": 139,
+          "label": "image_b",
+          "dir": 3
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "comparer_mode": "Slide"
+      },
+      "widgets_values": [
+        [
+          "/view?filename=rgthree.compare._temp_ivrbu_00001_.png&type=temp&subfolder=&rand=0.7747442286029547",
+          "/view?filename=rgthree.compare._temp_ivrbu_00002_.png&type=temp&subfolder=&rand=0.6882554572729849"
+        ]
+      ]
+    },
+    {
+      "id": 68,
+      "type": "WD14Tagger|pysssss",
+      "pos": {
+        "0": 1099.76025390625,
+        "1": -78,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 288.095336914063,
+        "1": 220
+      },
+      "flags": {
+
+      },
+      "order": 38,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 91,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [93, 95],
+          "slot_index": 0,
+          "shape": 6,
+          "label": "STRING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "WD14Tagger|pysssss"
+      },
+      "widgets_values": [
+        "wd-v1-4-moat-tagger-v2",
+        0.35, 0.85, false, false, ""
+      ]
+    },
+    {
+      "id": 120,
+      "type": "SUPIR_conditioner",
+      "pos": {
+        "0": 2220.98364257813,
+        "1": -2514.626953125,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 244.366119384766,
+        "1": 166.000122070313
+      },
+      "flags": {
+
+      },
+      "order": 64,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "SUPIR_model",
+          "type": "SUPIRMODEL",
+          "link": 173,
+          "label": "SUPIR_model"
+        },
+        {
+          "name": "latents",
+          "type": "LATENT",
+          "link": 129,
+          "label": "latents"
+        },
+        {
+          "name": "captions",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "captions"
+          },
+          "label": "captions"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "SUPIR_cond_pos",
+          "links": [126],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "positive"
+        },
+        {
+          "name": "negative",
+          "type": "SUPIR_cond_neg",
+          "links": [127],
+          "slot_index": 1,
+          "shape": 3,
+          "label": "negative"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SUPIR_conditioner"
+      },
+      "widgets_values": [
+        "1girl,Wearing glasses, Asian girl, long black hair, white round neck T-shirt,high quality, detailed",
+        "bad quality, blurry, messy",
+        ""
+      ]
+    },
+    {
+      "id": 337,
+      "type": "SaveImage",
+      "pos": {
+        "0": 2524.90161132813,
+        "1": 1231.63012695313,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 219.058151245117,
+        "1": 270.000030517578
+      },
+      "flags": {
+
+      },
+      "order": 67,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 363,
+          "label": "images"
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 105,
+      "type": "PreviewImage",
+      "pos": {
+        "0": 2520.63427734375,
+        "1": -1673.93823242188,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 333.861480712891,
+        "1": 330.150299072266
+      },
+      "flags": {
+
+      },
+      "order": 55,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 114,
+          "label": "images"
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 19,
+      "type": "CheckpointLoaderSimple",
+      "pos": {
+        "0": 960.901550292969,
+        "1": 1102.63012695313,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 368.396026611328,
+        "1": 98
+      },
+      "flags": {
+
+      },
+      "order": 21,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [107],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "MODEL"
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [22, 23],
+          "slot_index": 1,
+          "shape": 3,
+          "label": "CLIP"
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [106],
+          "slot_index": 2,
+          "shape": 3,
+          "label": "VAE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "epicrealism_pureEvolutionV5超现实主义.safetensors"
+      ]
+    },
+    {
+      "id": 340,
+      "type": "ControlNetApply",
+      "pos": {
+        "0": 1836.90161132813,
+        "1": 1606.63012695313,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 262.987548828125,
+        "1": 98
+      },
+      "flags": {
+
+      },
+      "order": 54,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 367,
+          "label": "conditioning"
+        },
+        {
+          "name": "control_net",
+          "type": "CONTROL_NET",
+          "link": 369,
+          "label": "control_net"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 425,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [368],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "CONDITIONING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ControlNetApply"
+      },
+      "widgets_values": [1]
+    },
+    {
+      "id": 282,
+      "type": "ControlNetLoader",
+      "pos": {
+        "0": 1288.90161132813,
+        "1": 1475.63012695313,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 434.099517822266,
+        "1": 58
+      },
+      "flags": {
+
+      },
+      "order": 22,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CONTROL_NET",
+          "type": "CONTROL_NET",
+          "links": [369],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "CONTROL_NET"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ControlNetLoader"
+      },
+      "widgets_values": [
+        "fp16/control_v11f1e_sd15_tile_fp16.safetensors"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "UltimateSDUpscale",
+      "pos": {
+        "0": 2154.90161132813,
+        "1": 1239.63012695313,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 308.040283203125,
+        "1": 617.842346191406
+      },
+      "flags": {
+
+      },
+      "order": 61,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 422,
+          "label": "image"
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 107,
+          "label": "model"
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 368,
+          "label": "positive"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 371,
+          "label": "negative"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 106,
+          "label": "vae"
+        },
+        {
+          "name": "upscale_model",
+          "type": "UPSCALE_MODEL",
+          "link": 21,
+          "slot_index": 5,
+          "label": "upscale_model"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [26, 363, 365],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "IMAGE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UltimateSDUpscale"
+      },
+      "widgets_values": [1, 823643852221038, "randomize",
+        30, 7, "euler",
+        "karras",
+        0.2, "Linear",
+        512, 512, 16, 32, "None",
+        1, 64, 16, 32, true, false]
+    },
+    {
+      "id": 20,
+      "type": "UpscaleModelLoader",
+      "pos": {
+        "0": 1834.90161132813,
+        "1": 1464.63012695313,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 267.358428955078,
+        "1": 58
+      },
+      "flags": {
+
+      },
+      "order": 23,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "UPSCALE_MODEL",
+          "type": "UPSCALE_MODEL",
+          "links": [21],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "UPSCALE_MODEL"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UpscaleModelLoader"
+      },
+      "widgets_values": [
+        "GFPGANv1.4.pth"
+      ]
+    },
+    {
+      "id": 298,
+      "type": "VAELoader",
+      "pos": {
+        "0": 1073,
+        "1": -275,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {
+
+      },
+      "order": 24,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [325, 326],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "VAE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "vae-ft-mse-840000-ema-pruned.safetensors"
+      ]
+    },
+    {
+      "id": 69,
+      "type": "ShowText|pysssss",
+      "pos": {
+        "0": 1454.51440429688,
+        "1": -83.0745315551758,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 315.261444091797,
+        "1": 89.6298370361328
+      },
+      "flags": {
+
+      },
+      "order": 57,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 92,
+          "widget": {
+            "name": "text"
+          },
+          "label": "text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 0,
+          "shape": 6,
+          "label": "STRING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "1girl, solo, long_hair, smile, brown_hair, brown_eyes, outdoors, teeth, water, grin, looking_to_the_side, portrait, nature, realistic, waterfall"
+      ]
+    },
+    {
+      "id": 55,
+      "type": "UpscaleModelLoader",
+      "pos": {
+        "0": 1113,
+        "1": 208,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 274.4736328125,
+        "1": 58
+      },
+      "flags": {
+
+      },
+      "order": 25,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "UPSCALE_MODEL",
+          "type": "UPSCALE_MODEL",
+          "links": [72],
+          "shape": 3,
+          "label": "UPSCALE_MODEL"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UpscaleModelLoader"
+      },
+      "widgets_values": [
+        "4x-UltraSharp.pth"
+      ]
+    },
+    {
+      "id": 63,
+      "type": "RescaleCFG",
+      "pos": {
+        "0": 1554,
+        "1": -319,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 215.484893798828,
+        "1": 58
+      },
+      "flags": {
+
+      },
+      "order": 36,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 87,
+          "label": "model"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [76],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "MODEL"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RescaleCFG"
+      },
+      "widgets_values": [1]
+    },
+    {
+      "id": 82,
+      "type": "Note",
+      "pos": {
+        "0": 1832,
+        "1": 249,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 210,
+        "1": 89.3706970214844
+      },
+      "flags": {
+
+      },
+      "order": 26,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "steps：10～30（步数越高越占空间）\ndenoise:1 （0% 像原图）\ndenoise:0.1 （90% 像原图） "
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 73,
+      "type": "ColorMatch",
+      "pos": {
+        "0": 2469,
+        "1": -33,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 210,
+        "1": 102
+      },
+      "flags": {
+
+      },
+      "order": 73,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image_ref",
+          "type": "IMAGE",
+          "link": 99,
+          "label": "image_ref"
+        },
+        {
+          "name": "image_target",
+          "type": "IMAGE",
+          "link": 97,
+          "label": "image_target"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [98, 100],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "image"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ColorMatch"
+      },
+      "widgets_values": [
+        "mkl",
+        1]
+    },
+    {
+      "id": 57,
+      "type": "TiledDiffusion",
+      "pos": {
+        "0": 1833,
+        "1": -282,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 250.372146606445,
+        "1": 154
+      },
+      "flags": {
+
+      },
+      "order": 49,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 76,
+          "label": "model"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [77],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "MODEL"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TiledDiffusion"
+      },
+      "widgets_values": [
+        "Mixture of Diffusers",
+        768, 768, 64, 4]
+    },
+    {
+      "id": 104,
+      "type": "CCSR_Model_Select",
+      "pos": {
+        "0": 2150.92749023438,
+        "1": -1677.14086914063,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {
+
+      },
+      "order": 27,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "ccsr_model",
+          "type": "CCSRMODEL",
+          "links": [111],
+          "shape": 3,
+          "label": "ccsr_model"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CCSR_Model_Select"
+      },
+      "widgets_values": [
+        "SUPIR/real-world_ccsr.ckpt"
+      ]
+    },
+    {
+      "id": 107,
+      "type": "Image Comparer (rgthree)",
+      "pos": {
+        "0": 2522.6337890625,
+        "1": -1273.93859863281,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 338.697326660156,
+        "1": 408.161895751953
+      },
+      "flags": {
+
+      },
+      "order": 56,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image_a",
+          "type": "IMAGE",
+          "link": 116,
+          "label": "image_a",
+          "dir": 3
+        },
+        {
+          "name": "image_b",
+          "type": "IMAGE",
+          "link": 293,
+          "label": "image_b",
+          "dir": 3
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "comparer_mode": "Slide"
+      },
+      "widgets_values": [
+        [
+          "/view?filename=rgthree.compare._temp_imioy_00001_.png&type=temp&subfolder=&rand=0.9951220152816651",
+          "/view?filename=rgthree.compare._temp_imioy_00002_.png&type=temp&subfolder=&rand=0.13711712436296453"
+        ]
+      ]
+    },
+    {
+      "id": 160,
+      "type": "CheckpointLoaderSimple",
+      "pos": {
+        "0": 972.322631835938,
+        "1": -2971.71997070313,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 411.814483642578,
+        "1": 98
+      },
+      "flags": {
+
+      },
+      "order": 28,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [169],
+          "shape": 3,
+          "label": "MODEL"
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [170],
+          "slot_index": 1,
+          "shape": 3,
+          "label": "CLIP"
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [171],
+          "slot_index": 2,
+          "shape": 3,
+          "label": "VAE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "dreamshaperXL_v21TurboDPMSDE.safetensors"
+      ]
+    },
+    {
+      "id": 177,
+      "type": "SUPIR_tiles",
+      "pos": {
+        "0": 1274.32263183594,
+        "1": -2491.71997070313,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 226.571594238281,
+        "1": 122
+      },
+      "flags": {
+
+      },
+      "order": 34,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 201,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image_tiles",
+          "type": "IMAGE",
+          "links": [202],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "image_tiles"
+        },
+        {
+          "name": "tile_size",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "label": "tile_size"
+        },
+        {
+          "name": "tile_stride",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "label": "tile_stride"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SUPIR_tiles"
+      },
+      "widgets_values": [512, 256]
+    },
+    {
+      "id": 115,
+      "type": "SUPIR_first_stage",
+      "pos": {
+        "0": 1848.32263183594,
+        "1": -2727.71997070313,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 330,
+        "1": 170
+      },
+      "flags": {
+
+      },
+      "order": 59,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "SUPIR_VAE",
+          "type": "SUPIRVAE",
+          "link": 172,
+          "label": "SUPIR_VAE"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 429,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SUPIR_VAE",
+          "type": "SUPIRVAE",
+          "links": [130],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "SUPIR_VAE"
+        },
+        {
+          "name": "denoised_image",
+          "type": "IMAGE",
+          "links": [122, 131, 139],
+          "slot_index": 1,
+          "shape": 3,
+          "label": "denoised_image"
+        },
+        {
+          "name": "denoised_latents",
+          "type": "LATENT",
+          "links": [129],
+          "slot_index": 2,
+          "shape": 3,
+          "label": "denoised_latents"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SUPIR_first_stage"
+      },
+      "widgets_values": [true, 512, 512, "auto"
+      ]
+    },
+    {
+      "id": 121,
+      "type": "SUPIR_encode",
+      "pos": {
+        "0": 2225.32275390625,
+        "1": -2726.71997070313,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 215.511611938477,
+        "1": 126
+      },
+      "flags": {
+
+      },
+      "order": 63,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "SUPIR_VAE",
+          "type": "SUPIRVAE",
+          "link": 130,
+          "label": "SUPIR_VAE"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 131,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": [125],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "latent"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SUPIR_encode"
+      },
+      "widgets_values": [true, 512, "auto"
+      ]
+    },
+    {
+      "id": 124,
+      "type": "SaveImage",
+      "pos": {
+        "0": 2876,
+        "1": -2570,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 210,
+        "1": 270.000091552734
+      },
+      "flags": {
+
+      },
+      "order": 75,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 135,
+          "label": "images"
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 128,
+      "type": "Note",
+      "pos": {
+        "0": 2515,
+        "1": -3049,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 305.50244140625,
+        "1": 243.070236206055
+      },
+      "flags": {
+
+      },
+      "order": 29,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "fp32：速度慢，高精度\nbf16:速度快，精度差\nfp8:低端显卡，精度差\n\n快速模式设置\nsteps：10～45（值越高，越多细节）\n\ncfg控制修改强度，值越低，创造性越高\ncfg scale start：1.2～5\ncfg scale end：1.2～5\n比如两者设置：1.2（那它发挥的空间就越大）\n比如两者设置：5（那它发挥的空间就越小）\n\ncontrol scale start:0.9(默认：1)\ncontrol scale end:0.95(默认：1)\n比如两者起始设置：0.8和0.85（值越低，创造性越高）\n比如两者起始设置：0.93和0.98（值越高，越贴合你的图像）\n\n修复强度：（值越高，修复强度越大）\nrestore-_cfg：-1～20（默认-1：等于禁用这功能）\n\nRestoreDPMPP2MSampler（默认恢复采样，速度慢）\nTiledRestoreEDMSampler（拼贴恢复采样，速度快）"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 102,
+      "type": "CCSR_Upscale",
+      "pos": {
+        "0": 2156.00122070313,
+        "1": -1558.46423339844,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 317.400024414063,
+        "1": 390
+      },
+      "flags": {
+
+      },
+      "order": 48,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "ccsr_model",
+          "type": "CCSRMODEL",
+          "link": 111,
+          "slot_index": 0,
+          "label": "ccsr_model"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 292,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "upscaled_image",
+          "type": "IMAGE",
+          "links": [114, 116],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "upscaled_image"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CCSR_Upscale"
+      },
+      "widgets_values": [
+        "lanczos",
+        1, 10, 0.6667, 0.3333, "ccsr_tiled_mixdiff",
+        512, 256, 1024, 1024, "adain",
+        false, 24647241638551, "randomize"
+      ]
+    },
+    {
+      "id": 109,
+      "type": "Note",
+      "pos": {
+        "0": 941.927551269531,
+        "1": -1256.14086914063,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 307.97314453125,
+        "1": 375.385803222656
+      },
+      "flags": {
+
+      },
+      "order": 30,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "CCSR和SUPIR：两者可以根据图像调换位置\nSUPIR模型：功能修复、模糊、损坏、去噪点、上色等修复\nCCSR模型：功能磨皮、优化平滑褶皱、锐化\n\nSUPIR-v0Q.ckpt：质量较高大模型\nSUPIR-v0F.ckpt：快速小模型\n\nfp32：速度慢，高精度\nbf16:速度快，精度差\nfp8:低端显卡，精度差\n\nsdxl_model\n选择图像增强模型，例如：\n增强模型：dreamshaper XL apha2 SDXL\n增强模型：epicrealismXL_v4Photoreal.safetensors\n\n快速设置\nscale_by：1～4（放大倍数）\nsteps：10～45（步数：越高越占空间）\n\nsteps：10～45（值越高，越多细节）\n\n修复强度：（值越高，修复强度越大）\nrestoration scale：-1～20（默认-1：等于禁用这功能）\n\ncfg控制修改强度，值越低，创造性越高\ncfg_scale：1.2～7\n\n提示词：记得简单描述画面内容\ncolor_fix_type：wavelet 色彩增强(可选)\n\nRestoreDPMPP2MSampler（默认恢复采样，速度慢）\nTiledRestoreEDMSampler（拼贴恢复采样，速度快）"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 110,
+      "type": "Note",
+      "pos": {
+        "0": 2156.92749023438,
+        "1": -1112.14086914063,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 315.704345703125,
+        "1": 230.121109008789
+      },
+      "flags": {
+
+      },
+      "order": 31,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "CCSR和SUPIR：两者可以根据图像调换位置\nSUPIR模型：功能修复、模糊、损坏、去噪点、上色等修复\nCCSR模型：功能磨皮、优化平滑褶皱、锐化\n\n选择：SUPlRreal-world_ccsr.ckpt\n\n快速设置\nscale_by：1～2（放大倍数）\nsteps：10～27（值越高，越多细节）\nsampling_method：ccsr tiled mixdiff\n\nCCSR\n是一种在颜色空间中随机化颜色的数据增强技术。该插件可以将输入图像的颜色空间随机化为HSV、HSL或YUV等颜色空间，从而增强图像的多样性。\n\nccsr_tiled_mixdiff\n是一种将输入图像划分为多个小块，并在这些小块中随机化颜色空间的数据增强技术。该插件还可以在小块之间进行混合操作，以进一步增强图像的多样性。\n\nccsr_tiled_vae_gaussian_weights\n是一种利用Variational Autoencoder(VAE)和高斯分布对输入图像进行编码和解码的数据增强技术。该插件首先将输入图像划分为多个小块，然后使用VAE对每个小块进行编码和解码。最后，插件可以对解码后的小块应用高斯噪声，以进一步增强图像的多样性。\n\n"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 119,
+      "type": "SUPIR_sample",
+      "pos": {
+        "0": 2510.32275390625,
+        "1": -2725.71997070313,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 315,
+        "1": 454
+      },
+      "flags": {
+
+      },
+      "order": 69,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "SUPIR_model",
+          "type": "SUPIRMODEL",
+          "link": 175,
+          "label": "SUPIR_model"
+        },
+        {
+          "name": "latents",
+          "type": "LATENT",
+          "link": 125,
+          "label": "latents"
+        },
+        {
+          "name": "positive",
+          "type": "SUPIR_cond_pos",
+          "link": 126,
+          "label": "positive"
+        },
+        {
+          "name": "negative",
+          "type": "SUPIR_cond_neg",
+          "link": 127,
+          "label": "negative"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": [133],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "latent"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SUPIR_sample"
+      },
+      "widgets_values": [777, "fixed",
+        10, 1.2, 1.2, 5, 1, 1, 0.9, 0.95, 20, false, "TiledRestoreEDMSampler",
+        1024, 512]
+    },
+    {
+      "id": 103,
+      "type": "SUPIR_Upscale",
+      "pos": {
+        "0": 1301.63427734375,
+        "1": -1682.93823242188,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 400,
+        "1": 818.000061035156
+      },
+      "flags": {
+
+      },
+      "order": 35,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 290,
+          "label": "image"
+        },
+        {
+          "name": "captions",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "captions"
+          },
+          "label": "captions"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "upscaled_image",
+          "type": "IMAGE",
+          "links": [115, 118, 292, 293],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "upscaled_image"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SUPIR_Upscale"
+      },
+      "widgets_values": [
+        "SUPIR/SUPIR-v0Q.ckpt",
+        "图片增强epicrealismXL_v4Photoreal.safetensors",
+        158477126639640, "randomize",
+        "lanczos",
+        1, 10, -1, 4, "1girl,",
+        "bad quality, blurry, messy",
+        5, 1.003, 1, 4, 0, "Wavelet",
+        true, true, 512, 32, "",
+        "auto",
+        "auto",
+        1, false, 1024, 512, false, false, "RestoreDPMPP2MSampler"
+      ]
+    },
+    {
+      "id": 15,
+      "type": "LoadImage",
+      "pos": {
+        "0": 1198.90161132813,
+        "1": 1611.63012695313,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 220.560043334961,
+        "1": 314.000030517578
+      },
+      "flags": {
+
+      },
+      "order": 32,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [426],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "IMAGE"
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "MASK"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "ComfyUI_temp_sehfm_00040_.png",
+        "image"
+      ]
+    },
+    {
+      "id": 398,
+      "type": "ImageResizeKJ",
+      "pos": {
+        "0": 1493,
+        "1": 1614,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 250.383010864258,
+        "1": 238
+      },
+      "flags": {
+
+      },
+      "order": 44,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 426,
+          "label": "image"
+        },
+        {
+          "name": "get_image_size",
+          "type": "IMAGE",
+          "link": null,
+          "label": "get_image_size"
+        },
+        {
+          "name": "width_input",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "width_input"
+          },
+          "label": "width_input"
+        },
+        {
+          "name": "height_input",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "height_input"
+          },
+          "label": "height_input"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [422, 423, 424, 425],
+          "shape": 3,
+          "label": "IMAGE"
+        },
+        {
+          "name": "width",
+          "type": "FLOAT,INT,NUMBER,STRING",
+          "links": null,
+          "shape": 3,
+          "label": "width"
+        },
+        {
+          "name": "height",
+          "type": "FLOAT,INT,NUMBER,STRING",
+          "links": null,
+          "shape": 3,
+          "label": "height"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageResizeKJ"
+      },
+      "widgets_values": [512, 1024, "nearest-exact",
+        true, 2, 0, 0, "disabled"
+      ]
+    },
+    {
+      "id": 341,
+      "type": "Note",
+      "pos": {
+        "0": 1492,
+        "1": 1883,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 248.379623413086,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 33,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "尺寸增加一倍，生成时间翻4倍"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 126,
+      "type": "ImageUpscaleWithModel",
+      "pos": {
+        "0": 986.290222167969,
+        "1": -2607.6015625,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 226.800003051758,
+        "1": 46
+      },
+      "flags": {
+
+      },
+      "order": 39,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "upscale_model",
+          "type": "UPSCALE_MODEL",
+          "link": 136,
+          "label": "upscale_model"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 137,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [430],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "IMAGE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageUpscaleWithModel"
+      }
+    },
+    {
+      "id": 400,
+      "type": "ImageResizeKJ",
+      "pos": {
+        "0": 1539,
+        "1": -2728,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 250.383010864258,
+        "1": 238
+      },
+      "flags": {
+
+      },
+      "order": 52,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 430,
+          "label": "image"
+        },
+        {
+          "name": "get_image_size",
+          "type": "IMAGE",
+          "link": null,
+          "label": "get_image_size"
+        },
+        {
+          "name": "width_input",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "width_input"
+          },
+          "label": "width_input"
+        },
+        {
+          "name": "height_input",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "height_input"
+          },
+          "label": "height_input"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [429],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "IMAGE"
+        },
+        {
+          "name": "width",
+          "type": "FLOAT,INT,NUMBER,STRING",
+          "links": null,
+          "shape": 3,
+          "label": "width"
+        },
+        {
+          "name": "height",
+          "type": "FLOAT,INT,NUMBER,STRING",
+          "links": null,
+          "shape": 3,
+          "label": "height"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageResizeKJ"
+      },
+      "widgets_values": [768, 1024, "nearest-exact",
+        true, 2, 0, 0, "disabled"
+      ]
+    },
+    {
+      "id": 56,
+      "type": "VAEEncode",
+      "pos": {
+        "0": 1631,
+        "1": 195,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 140,
+        "1": 46
+      },
+      "flags": {
+
+      },
+      "order": 60,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 427,
+          "label": "pixels"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 325,
+          "slot_index": 1,
+          "label": "vae"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [80],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "LATENT"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEEncode"
+      }
+    },
+    {
+      "id": 399,
+      "type": "ImageResizeKJ",
+      "pos": {
+        "0": 1519,
+        "1": 305,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 250.383010864258,
+        "1": 238
+      },
+      "flags": {
+
+      },
+      "order": 53,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 428,
+          "label": "image"
+        },
+        {
+          "name": "get_image_size",
+          "type": "IMAGE",
+          "link": null,
+          "label": "get_image_size"
+        },
+        {
+          "name": "width_input",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "width_input"
+          },
+          "label": "width_input"
+        },
+        {
+          "name": "height_input",
+          "type": "INT",
+          "link": null,
+          "widget": {
+            "name": "height_input"
+          },
+          "label": "height_input"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [427],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "IMAGE"
+        },
+        {
+          "name": "width",
+          "type": "FLOAT,INT,NUMBER,STRING",
+          "links": null,
+          "shape": 3,
+          "label": "width"
+        },
+        {
+          "name": "height",
+          "type": "FLOAT,INT,NUMBER,STRING",
+          "links": null,
+          "shape": 3,
+          "label": "height"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageResizeKJ"
+      },
+      "widgets_values": [512, 512, "nearest-exact",
+        true, 2, 0, 0, "disabled"
+      ]
+    },
+    {
+      "id": 401,
+      "type": "Note",
+      "pos": {
+        "0": 296,
+        "1": -3113,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": [476.556915283203, 339.203094482422],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "🔥吴杨峰 笔记",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "🔥微信群\n🔥一起学习最新知识要点，解决复杂问题，分享解决方案\n🔥开通可查看吴杨峰 笔记内容｜在微信群内提供你notion笔记注册邮箱即可\n🔥微信群：吴杨峰设计群《陪伴》｜入群加微信号：wuyangfeng369\n🔥非入群者，勿加我微信｜ 入群赞助費369元/1年\n\n---\n\n🔥吴杨峰｜ComfyUI 设计师的工具箱（端脑云在线镜像）仅部署适合设计的高质量、实用性工作流\n🔥不想本地部署安装ComfyUI ，直接学习ComfyUI 使用技巧即可\n🔥目前就这一处集合上百个工作流在一个 ComfyUI中，实时新增最新主流工作流\n🔥吴杨峰｜ComfyUI 设计师的工具箱（镜像）｜即开即用：https://bit.ly/49Yc7V8\n🔥最大优点：在一个ComfyUI内部署上百几个工作流，可自由调用其他工作流节点功能组合使用\n端脑云在线ComfyUI镜像内所有工作流都一一对应我笔记内工作流教程及视频教程\n🔥吴杨峰 笔记｜ComfyUI教程：https://bit.ly/3YFFJVE\n按笔记中工作流，倒序学，也就我的学习路程\n\n🔥仅分享｜高质量、实用性工具｜最新｜全球顶尖｜ComfyUI 实用工作流｜AI工具：https://bit.ly/4blcJ7X\n\n🔥顶尖书法家｜书法定制\n🔥吴扬帆大书法抖音号：https://bit.ly/44UzCfA"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [21, 20, 0, 16, 5, "UPSCALE_MODEL"
+    ],
+    [22, 19, 1, 17, 0, "CLIP"
+    ],
+    [23, 19, 1, 18, 0, "CLIP"
+    ],
+    [26, 16, 0, 22, 1, "IMAGE"
+    ],
+    [72, 55, 0, 54, 0, "UPSCALE_MODEL"
+    ],
+    [73, 65, 0, 54, 1, "IMAGE"
+    ],
+    [76, 63, 0, 57, 0, "MODEL"
+    ],
+    [77, 57, 0, 58, 0, "MODEL"
+    ],
+    [78, 59, 0, 58, 1, "CONDITIONING"
+    ],
+    [79, 67, 0, 58, 2, "CONDITIONING"
+    ],
+    [80, 56, 0, 58, 3, "LATENT"
+    ],
+    [81, 71, 0, 59, 0, "CONDITIONING"
+    ],
+    [82, 60, 0, 59, 1, "CONTROL_NET"
+    ],
+    [83, 65, 0, 59, 2, "IMAGE"
+    ],
+    [84, 58, 0, 61, 0, "LATENT"
+    ],
+    [87, 66, 0, 63, 0, "MODEL"
+    ],
+    [89, 65, 0, 64, 1, "IMAGE"
+    ],
+    [90, 66, 1, 67, 0, "CLIP"
+    ],
+    [91, 65, 0, 68, 0, "IMAGE"
+    ],
+    [92, 70, 0, 69, 0, "STRING"
+    ],
+    [93, 68, 0, 70, 0, "STRING"
+    ],
+    [94, 66, 1, 71, 0, "CLIP"
+    ],
+    [95, 68, 0, 71, 1, "STRING"
+    ],
+    [97, 61, 0, 73, 1, "IMAGE"
+    ],
+    [98, 73, 0, 72, 0, "IMAGE"
+    ],
+    [99, 65, 0, 73, 0, "IMAGE"
+    ],
+    [100, 73, 0, 64, 0, "IMAGE"
+    ],
+    [101, 61, 0, 74, 0, "IMAGE"
+    ],
+    [106, 19, 2, 16, 4, "VAE"
+    ],
+    [107, 19, 0, 16, 1, "MODEL"
+    ],
+    [111, 104, 0, 102, 0, "CCSRMODEL"
+    ],
+    [114, 102, 0, 105, 0, "IMAGE"
+    ],
+    [115, 103, 0, 106, 0, "IMAGE"
+    ],
+    [116, 102, 0, 107, 0, "IMAGE"
+    ],
+    [118, 103, 0, 108, 0, "IMAGE"
+    ],
+    [122, 115, 1, 117, 0, "IMAGE"
+    ],
+    [123, 118, 0, 117, 1, "IMAGE"
+    ],
+    [125, 121, 0, 119, 1, "LATENT"
+    ],
+    [126, 120, 0, 119, 2, "SUPIR_cond_pos"
+    ],
+    [127, 120, 1, 119, 3, "SUPIR_cond_neg"
+    ],
+    [129, 115, 2, 120, 1, "LATENT"
+    ],
+    [130, 115, 0, 121, 0, "SUPIRVAE"
+    ],
+    [131, 115, 1, 121, 1, "IMAGE"
+    ],
+    [133, 119, 0, 122, 1, "LATENT"
+    ],
+    [135, 122, 0, 124, 0, "IMAGE"
+    ],
+    [136, 125, 0, 126, 0, "UPSCALE_MODEL"
+    ],
+    [137, 118, 0, 126, 1, "IMAGE"
+    ],
+    [138, 122, 0, 127, 0, "IMAGE"
+    ],
+    [139, 115, 1, 127, 1, "IMAGE"
+    ],
+    [169, 160, 0, 159, 0, "MODEL"
+    ],
+    [170, 160, 1, 159, 1, "CLIP"
+    ],
+    [171, 160, 2, 159, 2, "VAE"
+    ],
+    [172, 159, 1, 115, 0, "SUPIRVAE"
+    ],
+    [173, 159, 0, 120, 0, "SUPIRMODEL"
+    ],
+    [175, 159, 0, 119, 0, "SUPIRMODEL"
+    ],
+    [176, 159, 1, 122, 0, "SUPIRVAE"
+    ],
+    [201, 118, 0, 177, 0, "IMAGE"
+    ],
+    [202, 177, 0, 179, 0, "IMAGE"
+    ],
+    [290, 101, 0, 103, 0, "IMAGE"
+    ],
+    [291, 101, 0, 108, 1, "IMAGE"
+    ],
+    [292, 103, 0, 102, 1, "IMAGE"
+    ],
+    [293, 103, 0, 107, 1, "IMAGE"
+    ],
+    [325, 298, 0, 56, 1, "VAE"
+    ],
+    [326, 298, 0, 61, 1, "VAE"
+    ],
+    [363, 16, 0, 337, 0, "IMAGE"
+    ],
+    [364, 22, 0, 338, 0, "IMAGE"
+    ],
+    [365, 16, 0, 339, 0, "IMAGE"
+    ],
+    [367, 17, 0, 340, 0, "CONDITIONING"
+    ],
+    [368, 340, 0, 16, 2, "CONDITIONING"
+    ],
+    [369, 282, 0, 340, 1, "CONTROL_NET"
+    ],
+    [371, 18, 0, 16, 3, "CONDITIONING"
+    ],
+    [422, 398, 0, 16, 0, "IMAGE"
+    ],
+    [423, 398, 0, 22, 0, "IMAGE"
+    ],
+    [424, 398, 0, 339, 1, "IMAGE"
+    ],
+    [425, 398, 0, 340, 2, "IMAGE"
+    ],
+    [426, 15, 0, 398, 0, "IMAGE"
+    ],
+    [427, 399, 0, 56, 0, "IMAGE"
+    ],
+    [428, 54, 0, 399, 0, "IMAGE"
+    ],
+    [429, 400, 0, 115, 1, "IMAGE"
+    ],
+    [430, 126, 0, 400, 0, "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "SD Upscale 高清修复",
+      "bounding": [911, 929, 2105, 1010],
+      "color": "#3f789e",
+      "font_size": 60,
+      "locked": false
+    },
+    {
+      "title": "CCSR+SUPIR 高清修复",
+      "bounding": [901, -1833, 2009, 1006],
+      "color": "#3f789e",
+      "font_size": 60,
+      "locked": false
+    },
+    {
+      "title": "Tile 高清修复",
+      "bounding": [911, -579, 2552, 1241],
+      "color": "#3f789e",
+      "font_size": 60,
+      "locked": false
+    },
+    {
+      "title": "快速版｜CCSR+SUPIR 高清修复",
+      "bounding": [890, -3146, 2703, 1083],
+      "color": "#3f789e",
+      "font_size": 60,
+      "locked": false
+    }
+  ],
+  "config": {
+
+  },
+  "extra": {
+    "ds": {
+      "scale": 0.409090909090909,
+      "offset": [740.296058922829, 4205.88001859535]
+    },
+    "workspace_info": {
+      "id": "QTYCNOUDy-N_QQ8r_b3qa",
+      "saveLock": false,
+      "cloudID": null,
+      "coverMediaPath": null
+    }
+  },
+  "version": 0.4
+}
