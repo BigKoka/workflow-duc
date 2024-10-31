@@ -1,0 +1,1479 @@
+{
+  "last_node_id": 238,
+  "last_link_id": 477,
+  "nodes": [
+    {
+      "id": 216,
+      "type": "FreeU_V2",
+      "pos": {
+        "0": -288.983001708984,
+        "1": 944.241333007813,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 210,
+        "1": 130
+      },
+      "flags": {
+
+      },
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 453,
+          "label": "model"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [458],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "MODEL"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FreeU_V2"
+      },
+      "widgets_values": [1.19, 1.19, 0.89, 0.2]
+    },
+    {
+      "id": 217,
+      "type": "IPAdapterModelLoader",
+      "pos": {
+        "0": -407.540985107422,
+        "1": 1339.57141113281,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 375.146514892578,
+        "1": 58.5637741088867
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IPADAPTER",
+          "type": "IPADAPTER",
+          "links": [455, 459],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "IPADAPTER"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "IPAdapterModelLoader"
+      },
+      "widgets_values": [
+        "ip-adapter_sdxl_vit-h.safetensors"
+      ]
+    },
+    {
+      "id": 218,
+      "type": "CLIPVisionLoader",
+      "pos": {
+        "0": -439.540985107422,
+        "1": 1461.57141113281,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 402.559539794922,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP_VISION",
+          "type": "CLIP_VISION",
+          "links": [457, 461],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "CLIP_VISION"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPVisionLoader"
+      },
+      "widgets_values": [
+        "CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors"
+      ]
+    },
+    {
+      "id": 219,
+      "type": "TomePatchModel",
+      "pos": {
+        "0": -535.385864257813,
+        "1": 1011.72912597656,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+
+      },
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 477,
+          "label": "model"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [453],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "MODEL"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TomePatchModel"
+      },
+      "widgets_values": [0.3]
+    },
+    {
+      "id": 220,
+      "type": "PrepImageForClipVision",
+      "pos": {
+        "0": -294.803039550781,
+        "1": 1151.57141113281,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 215.820022583008,
+        "1": 106
+      },
+      "flags": {
+
+      },
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 475,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [456, 460],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "IMAGE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrepImageForClipVision"
+      },
+      "widgets_values": [
+        "LANCZOS",
+        "center",
+        0.35]
+    },
+    {
+      "id": 223,
+      "type": "Note",
+      "pos": {
+        "0": -533.541015625,
+        "1": 959.571472167969,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 340.272735595703,
+        "1": 105.38916015625
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "TomePatchModel 节点\n图像修复：高效修复图像中的缺陷或损坏部分，恢复图像的完整性。\n细节增强：提升图像的细节层次，使图像更加清晰、锐利。\n纹理补丁：恢复或增强图像中的纹理效果，使其更加真实。\n图像合成：通过补丁处理，实现无缝拼接和自然合成\n\n高 ratio 值：如 1 保留更多补丁，图像质量高，速度慢\n低 ratio 值：如 0.25 保留较少补丁，图像质量低，速度快"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 224,
+      "type": "Note",
+      "pos": {
+        "0": -54.5409927368164,
+        "1": 949.571472167969,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 340.272735595703,
+        "1": 105.38916015625
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "FreeU_V2 节点\n噪声消除：有效消除图像中的噪声，使图像更加清晰和平滑。\n图像增强：除了去噪，使图像更加生动。\n细节保留：在去噪时，优化保留了图像中的重要细节，防止过度平滑导致的细节丢失。"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 225,
+      "type": "Note",
+      "pos": {
+        "0": -516.541015625,
+        "1": 1343.57141113281,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 333.668212890625,
+        "1": 176.453460693359
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "ip-adapter_sdxl_vit-h.safetensors\n高质量图像生成和细节修复，适合高级图像处理\n\nip-adapter_sdxl.safetensors\n基础的图像生成和风格转换，适合多样性艺术创作\n\nip_plus_composition_sdxl.safetensors\n高级合成和复杂编辑，适合多层次图像处理\n\nip-adapter-plus sdxl_vit-h.safetensors\n综合增强和多模态处理，适用于高分辨率图像生成和高级识别任务。\n"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 227,
+      "type": "Note",
+      "pos": {
+        "0": 348.459014892578,
+        "1": 1165.57141113281,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 249.957626342773,
+        "1": 63.8008575439453
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "IPAdapter Tiled\n图像分块高清放大处理，图片增强、修复老照片等"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 207,
+      "type": "CLIPTextEncode",
+      "pos": {
+        "0": -903.461181640625,
+        "1": 1456.93566894531,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 276.946807861328,
+        "1": 87.6786651611328
+      },
+      "flags": {
+
+      },
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 443,
+          "label": "clip"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [467],
+          "slot_index": 0,
+          "label": "CONDITIONING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 221,
+      "type": "IPAdapterTiled",
+      "pos": {
+        "0": 344.690032958984,
+        "1": 1220.57141113281,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 315,
+        "1": 302
+      },
+      "flags": {
+
+      },
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 454,
+          "label": "model"
+        },
+        {
+          "name": "ipadapter",
+          "type": "IPADAPTER",
+          "link": 455,
+          "label": "ipadapter"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 456,
+          "label": "image"
+        },
+        {
+          "name": "image_negative",
+          "type": "IMAGE",
+          "link": null,
+          "label": "image_negative"
+        },
+        {
+          "name": "attn_mask",
+          "type": "MASK",
+          "link": null,
+          "label": "attn_mask"
+        },
+        {
+          "name": "clip_vision",
+          "type": "CLIP_VISION",
+          "link": 457,
+          "label": "clip_vision"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [469],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "MODEL"
+        },
+        {
+          "name": "tiles",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3,
+          "label": "tiles"
+        },
+        {
+          "name": "masks",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "masks"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "IPAdapterTiled"
+      },
+      "widgets_values": [1, "linear",
+        "concat",
+        0, 1, 0, "V only"
+      ]
+    },
+    {
+      "id": 230,
+      "type": "ImageUpscaleWithModel",
+      "pos": {
+        "0": -853.314331054688,
+        "1": 1826.03186035156,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 226.800003051758,
+        "1": 46
+      },
+      "flags": {
+
+      },
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "upscale_model",
+          "type": "UPSCALE_MODEL",
+          "link": 462,
+          "label": "upscale_model"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 463,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [464],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "IMAGE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageUpscaleWithModel"
+      }
+    },
+    {
+      "id": 211,
+      "type": "VAEEncode",
+      "pos": {
+        "0": -381.250823974609,
+        "1": 2147.10693359375,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 140,
+        "1": 46
+      },
+      "flags": {
+
+      },
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 465,
+          "slot_index": 0,
+          "label": "pixels"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 448,
+          "slot_index": 1,
+          "label": "vae"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [441],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "LATENT"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEEncode"
+      }
+    },
+    {
+      "id": 222,
+      "type": "IPAdapterAdvanced",
+      "pos": {
+        "0": -3.02266836166382,
+        "1": 1239.97229003906,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 315,
+        "1": 278
+      },
+      "flags": {
+
+      },
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 458,
+          "label": "model"
+        },
+        {
+          "name": "ipadapter",
+          "type": "IPADAPTER",
+          "link": 459,
+          "label": "ipadapter"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 460,
+          "label": "image"
+        },
+        {
+          "name": "image_negative",
+          "type": "IMAGE",
+          "link": null,
+          "label": "image_negative"
+        },
+        {
+          "name": "attn_mask",
+          "type": "MASK",
+          "link": null,
+          "label": "attn_mask"
+        },
+        {
+          "name": "clip_vision",
+          "type": "CLIP_VISION",
+          "link": 461,
+          "label": "clip_vision"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [454],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "MODEL"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "IPAdapterAdvanced"
+      },
+      "widgets_values": [1, "linear",
+        "concat",
+        0, 1, "V only"
+      ]
+    },
+    {
+      "id": 206,
+      "type": "CLIPTextEncode",
+      "pos": {
+        "0": -903,
+        "1": 1302,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 276.485656738281,
+        "1": 101.740440368652
+      },
+      "flags": {
+
+      },
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 442,
+          "label": "clip"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [449],
+          "slot_index": 0,
+          "label": "CONDITIONING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 229,
+      "type": "UpscaleModelLoader",
+      "pos": {
+        "0": -891.003234863281,
+        "1": 1704,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 264.488891601563,
+        "1": 58
+      },
+      "flags": {
+
+      },
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "UPSCALE_MODEL",
+          "type": "UPSCALE_MODEL",
+          "links": [462],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "UPSCALE_MODEL"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UpscaleModelLoader"
+      },
+      "widgets_values": [
+        "4x-UltraSharp.pth"
+      ]
+    },
+    {
+      "id": 235,
+      "type": "ImageResize+",
+      "pos": {
+        "0": -836.514343261719,
+        "1": 1938.13354492188,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 210,
+        "1": 218
+      },
+      "flags": {
+
+      },
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 464,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [465, 466, 475],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "IMAGE"
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "label": "width"
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "label": "height"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageResize+"
+      },
+      "widgets_values": [512, 1024, "nearest",
+        true, "always",
+        0]
+    },
+    {
+      "id": 213,
+      "type": "ControlNetApplyAdvanced",
+      "pos": {
+        "0": -462.821899414063,
+        "1": 1920.810546875,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 226.800003051758,
+        "1": 166
+      },
+      "flags": {
+
+      },
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 449,
+          "label": "positive"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 467,
+          "label": "negative"
+        },
+        {
+          "name": "control_net",
+          "type": "CONTROL_NET",
+          "link": 450,
+          "slot_index": 2,
+          "label": "control_net"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 466,
+          "slot_index": 3,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [439],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "positive"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [440],
+          "slot_index": 1,
+          "shape": 3,
+          "label": "negative"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ControlNetApplyAdvanced"
+      },
+      "widgets_values": [1, 0, 1]
+    },
+    {
+      "id": 204,
+      "type": "KSampler",
+      "pos": {
+        "0": -144,
+        "1": 1707,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 268.456909179688,
+        "1": 262
+      },
+      "flags": {
+
+      },
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 469,
+          "label": "model"
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 439,
+          "label": "positive"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 440,
+          "label": "negative"
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 441,
+          "label": "latent_image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [444],
+          "slot_index": 0,
+          "label": "LATENT"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [617847624215648, "randomize",
+        8, 2, "dpmpp_sde",
+        "karras",
+        0.3]
+    },
+    {
+      "id": 208,
+      "type": "VAEDecode",
+      "pos": {
+        "0": -18.2395610809326,
+        "1": 2012.94165039063,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 140,
+        "1": 46
+      },
+      "flags": {
+
+      },
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 444,
+          "label": "samples"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 445,
+          "slot_index": 1,
+          "label": "vae"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [446],
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 209,
+      "type": "SaveImage",
+      "pos": {
+        "0": 202,
+        "1": 1710,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 480,
+        "1": 540
+      },
+      "flags": {
+
+      },
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 446,
+          "slot_index": 0,
+          "label": "images"
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 228,
+      "type": "Note",
+      "pos": {
+        "0": -397,
+        "1": 1154,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 303.536834716797,
+        "1": 135.878128051758
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "Prep Image For ClipVision 节点\n增强一致性、保留主要信息、颜色调整、图像缩放，提高处理性能、预防过拟合、\n\nLANCZOS ：保留最大细节，使图像清晰锐利，速度慢\nBICUBIC：图像边缘和细节，适合放大\nHAMMING：图像效果较为柔和，边缘效应较少\nBILINEAR：图像平滑但细节损失较多，速度快\nBOX：图像可能出现马赛克效应，适合粗略处理\nNEAREST：图像边缘清晰，像素化明显，质量低\n\nsharpening 设为 0（不进行锐化）\nsharpening 设为 3 或更高（高度锐化）"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 226,
+      "type": "Note",
+      "pos": {
+        "0": -545,
+        "1": 1460,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 422.157440185547,
+        "1": 172.54850769043
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "CLIP-ViT-H-14-laion2B-532B-679K.safetensors\n提升图像识别\nCLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors：\n更强的精度图像识别\nclip vision g.safetensors：\n图像生成、编辑、去噪和修复，提高图像的清晰度和视觉效果"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 237,
+      "type": "Note",
+      "pos": {
+        "0": -549,
+        "1": 1760,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 210,
+        "1": 69.5752868652344
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "ControlNet Tile SDXL\n模型高清修复"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 210,
+      "type": "LoadImage",
+      "pos": {
+        "0": -1177.28039550781,
+        "1": 1697.13354492188,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 250.462448120117,
+        "1": 334.225616455078
+      },
+      "flags": {
+
+      },
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [463],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "IMAGE"
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "MASK"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "蓝色蜥蜴穿棕色衣帽服-小图.png",
+        "image"
+      ]
+    },
+    {
+      "id": 205,
+      "type": "CheckpointLoaderSimple",
+      "pos": {
+        "0": -1376,
+        "1": 1303,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 420,
+        "1": 100
+      },
+      "flags": {
+
+      },
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [477],
+          "slot_index": 0,
+          "label": "MODEL"
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [442, 443],
+          "slot_index": 1,
+          "label": "CLIP"
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [445, 448],
+          "slot_index": 2,
+          "label": "VAE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "dreamshaperXL_lightningDPMSDE.safetensors"
+      ]
+    },
+    {
+      "id": 212,
+      "type": "ControlNetLoader",
+      "pos": {
+        "0": -550,
+        "1": 1809,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {
+
+      },
+      "order": 12,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CONTROL_NET",
+          "type": "CONTROL_NET",
+          "links": [450],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "CONTROL_NET"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ControlNetLoader"
+      },
+      "widgets_values": [
+        "SDXL 的 ControlNet 模型/controlnet-tile-sdxl-1.0.safetensors"
+      ]
+    },
+    {
+      "id": 238,
+      "type": "Note",
+      "pos": {
+        "0": -1949,
+        "1": 1297,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": [476.556915283203, 339.203094482422],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "🔥吴杨峰 笔记",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "🔥微信群\n🔥一起学习最新知识要点，解决复杂问题，分享解决方案\n🔥开通可查看吴杨峰 笔记内容｜在微信群内提供你notion笔记注册邮箱即可\n🔥微信群：吴杨峰设计群《陪伴》｜入群加微信号：wuyangfeng369\n🔥非入群者，勿加我微信｜ 入群赞助費369元/1年\n\n---\n\n🔥吴杨峰｜ComfyUI 设计师的工具箱（端脑云在线镜像）仅部署适合设计的高质量、实用性工作流\n🔥不想本地部署安装ComfyUI ，直接学习ComfyUI 使用技巧即可\n🔥目前就这一处集合上百个工作流在一个 ComfyUI中，实时新增最新主流工作流\n🔥吴杨峰｜ComfyUI 设计师的工具箱（镜像）｜即开即用：https://bit.ly/49Yc7V8\n🔥最大优点：在一个ComfyUI内部署上百几个工作流，可自由调用其他工作流节点功能组合使用\n端脑云在线ComfyUI镜像内所有工作流都一一对应我笔记内工作流教程及视频教程\n🔥吴杨峰 笔记｜ComfyUI教程：https://bit.ly/3YFFJVE\n按笔记中工作流，倒序学，也就我的学习路程\n\n🔥仅分享｜高质量、实用性工具｜最新｜全球顶尖｜ComfyUI 实用工作流｜AI工具：https://bit.ly/4blcJ7X\n\n🔥顶尖书法家｜书法定制\n🔥吴扬帆大书法抖音号：https://bit.ly/44UzCfA"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [409, 119, 0, 161, 2, "INT"
+    ],
+    [410, 126, 2, 160, 2, "VAE"
+    ],
+    [411, 119, 0, 165, 0, "INT"
+    ],
+    [412, 126, 2, 137, 4, "VAE"
+    ],
+    [413, 119, 0, 137, 6, "INT"
+    ],
+    [414, 119, 0, 176, 7, "INT"
+    ],
+    [439, 213, 0, 204, 1, "CONDITIONING"
+    ],
+    [440, 213, 1, 204, 2, "CONDITIONING"
+    ],
+    [441, 211, 0, 204, 3, "LATENT"
+    ],
+    [442, 205, 1, 206, 0, "CLIP"
+    ],
+    [443, 205, 1, 207, 0, "CLIP"
+    ],
+    [444, 204, 0, 208, 0, "LATENT"
+    ],
+    [445, 205, 2, 208, 1, "VAE"
+    ],
+    [446, 208, 0, 209, 0, "IMAGE"
+    ],
+    [448, 205, 2, 211, 1, "VAE"
+    ],
+    [449, 206, 0, 213, 0, "CONDITIONING"
+    ],
+    [450, 212, 0, 213, 2, "CONTROL_NET"
+    ],
+    [453, 219, 0, 216, 0, "MODEL"
+    ],
+    [454, 222, 0, 221, 0, "MODEL"
+    ],
+    [455, 217, 0, 221, 1, "IPADAPTER"
+    ],
+    [456, 220, 0, 221, 2, "IMAGE"
+    ],
+    [457, 218, 0, 221, 5, "CLIP_VISION"
+    ],
+    [458, 216, 0, 222, 0, "MODEL"
+    ],
+    [459, 217, 0, 222, 1, "IPADAPTER"
+    ],
+    [460, 220, 0, 222, 2, "IMAGE"
+    ],
+    [461, 218, 0, 222, 5, "CLIP_VISION"
+    ],
+    [462, 229, 0, 230, 0, "UPSCALE_MODEL"
+    ],
+    [463, 210, 0, 230, 1, "IMAGE"
+    ],
+    [464, 230, 0, 235, 0, "IMAGE"
+    ],
+    [465, 235, 0, 211, 0, "IMAGE"
+    ],
+    [466, 235, 0, 213, 3, "IMAGE"
+    ],
+    [467, 207, 0, 213, 1, "CONDITIONING"
+    ],
+    [469, 221, 0, 204, 0, "MODEL"
+    ],
+    [475, 235, 0, 220, 0, "IMAGE"
+    ],
+    [477, 205, 0, 219, 0, "MODEL"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "IPAdapter",
+      "bounding": [-575, 834, 1268, 718],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "Tile",
+      "bounding": [-572, 1673, 364, 546],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    }
+  ],
+  "config": {
+
+  },
+  "extra": {
+    "ds": {
+      "scale": 0.45,
+      "offset": [2288.05555555556, -483.555555555556]
+    },
+    "workspace_info": {
+      "id": "oEjCM3yOMtgbtpAK8PWwe",
+      "saveLock": false,
+      "cloudID": null,
+      "coverMediaPath": null
+    }
+  },
+  "version": 0.4
+}
